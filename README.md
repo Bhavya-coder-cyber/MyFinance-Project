@@ -42,9 +42,11 @@ The app features a clean React UI with components like stock charts, dynamic por
 ---
 ## 🤔 How It Works
 
-- **Upload Warranty**: Users upload an image of their warranty/invoice. The backend uses OCR (Tesseract.js) and optionally Google Gemini AI to extract product, brand, purchase date, warranty end, and category.
-- **Email Reminders**: The backend checks warranty statuses daily and sends reminders for those expiring soon. Users also receive emails for registration, profile updates, and account deletion.
-- **Profile & Security**: All sensitive actions (profile update, account deletion) require password confirmation and notify the user via email.
+- **Create Account**: Users can sign up for an account using their fullname, username, email and password.
+- **Search for stocks**: Users can search for stocks and view live data from Yahoo Finance and charts from TradingView whuch can be customised with different timeframes and indicators.
+- **Buy and Sell Units**: Users can buy and sell stock units with real-time price updates and currency conversion.
+- **Portfolio Management**: Users can view their portfolio and manage their stock holdings in a visually appealing way.
+- **Top Up Balance or Withdraw Funds**: Users can top up their balance and withdraw funds from their wallet.
 
 ---
 
@@ -75,7 +77,7 @@ Pull requests and feature suggestions are welcome! Please open an issue to discu
 ## 📧 License & Contact
 
 MIT License.  
-For support or business inquiries, contact [diwakarsameer27@gmail.com].
+For support or business inquiries, contact [jainbhavya154@gmail.com].
 
 ---
 
