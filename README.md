@@ -38,32 +38,8 @@ The app features a clean React UI with components like stock charts, dynamic por
 | Email Service      | Resend API                     |
 | Stock Data         | Yahoo Finance API, TradingView |
 | Currency Conversion| Open Exchange Rates API        |
----
-
-
-## 📦 Project Structure
-
-```
-WarranAI/
-  ├── Backend/
-  │   ├── controller/         # API controllers (auth, email, warranty, etc.)
-  │   ├── models/             # Mongoose models (User, Warranty)
-  │   ├── routes/             # Express route definitions
-  │   ├── utlis/              # Utilities (OCR, scheduler, cloudinary)
-  │   ├── middleware/         # Multer and other middleware
-  │   ├── server.js           # Express app entry point
-  │   └── EMAIL_REMINDER_README.md # Detailed email system docs
-  └── Frontend/
-      ├── src/
-      │   ├── components/     # UI and feature components
-      │   ├── pages/          # Main app pages (Dashboard, Settings, etc.)
-      │   ├── hooks/          # Custom React hooks
-      │   └── ...             # Styles, utils, etc.
-      └── public/             # Static assets
-```
 
 ---
-
 ## 🤔 How It Works
 
 - **Upload Warranty**: Users upload an image of their warranty/invoice. The backend uses OCR (Tesseract.js) and optionally Google Gemini AI to extract product, brand, purchase date, warranty end, and category.
