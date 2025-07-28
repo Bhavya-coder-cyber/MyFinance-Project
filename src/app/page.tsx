@@ -10,6 +10,18 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Separator } from "@/components/ui/separator";
+import features from "@/features.json";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -97,21 +109,24 @@ export default function Home() {
               </button>
             </Link>
           </div>
-          <div className="flex justify-around w-full">
+          <div className="flex justify-around w-full mb-5">
             <div className="max-w-1/2">
               <h1
-                className={`transition-all duration-700 ease-in-out text-3xl font-bold italic font-serif text-white dark:text-white ${
-                scrolled
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-[50%] opacity-0 absolute left-1/2"
-              }`}>
+                className={`transition-all duration-700 ease-in-out text-3xl font-bold italic font-serif text-black dark:text-white ${
+                  scrolled
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-[50%] opacity-0 absolute left-1/2"
+                }`}
+              >
                 About
               </h1>
-              <div className={`transition-all duration-1200 ease-in-out text-2xl font-serif text-white dark:text-white ${
-                scrolled
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-[50%] opacity-0 absolute left-1/2"
-              }`}>
+              <div
+                className={`transition-all duration-1200 ease-in-out text-2xl font-serif text-gray-500 dark:text-white ${
+                  scrolled
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-[50%] opacity-0 absolute left-1/2"
+                }`}
+              >
                 <p className="my-5">
                   MyFinance is an online platform that allows users to invest in
                   stocks, derivatives, mutual funds, ETFs, bonds, and other
@@ -136,6 +151,7 @@ export default function Home() {
               />
             </div>
           </div>
+          <Separator />
           <div className="flex flex-col justify-around mt-10">
             <h1 className="text-4xl font-bold">Features</h1>
             <div className="text-2xl my-5">
@@ -187,13 +203,47 @@ export default function Home() {
                     SEBI Registered
                   </AccordionTrigger>
                   <AccordionContent className="text-xl">
-                    We are SEBI registered
+                    We are SEBI registered (a basic finance project)
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>
           </div>
-          <div className="h-[550px] flex flex-col justify-center items-center text-gray-500 m-10">
+          <Separator />
+          <div className="w-full flex justify-center py-8">
+      <Carousel
+        plugins={[Autoplay({ delay: 10000 })]}
+        className="max-h-[550px] p-5 w-full md:w-3/4 rounded-lg shadow-lg overflow-hidden bg-gray-100 dark:bg-gray-950"
+      >
+        <CarouselContent>
+          {features.map((feature, index) => (
+            <CarouselItem key={index} className="flex justify-center items-center h-[500px] p-4">
+              <div className="w-full max-w-4xl">
+                <div className="rounded-lg shadow-xl p-6 flex flex-col h-full">
+                  <h2 className="text-4xl font-bold mb-4 text-left">{feature.title}</h2>
+                  <div className="flex-grow flex items-center justify-center mb-4 relative aspect-square max-h-[400px]">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title || "Feature Image"}
+                      layout="fill" // cover the container
+                      objectFit="contain" // ensure aspect ratio is kept without cropping
+                      className="rounded-md"
+                      priority
+                    />
+                  </div>
+                  <p className="text-left text-xl font-semibold text-gray-500">{feature.content}</p>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        <CarouselPrevious className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 cursor-pointer" />
+        <CarouselNext className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 cursor-pointer" />
+      </Carousel>
+    </div>
+          <Separator />
+          <div className="h-[350px] flex flex-col justify-center items-center text-gray-500 m-10">
             <h1 className="text-2xl">Start Your Investment Journey Now!</h1>
             <Link href="/signup">
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-5 text-2xl cursor-pointer">

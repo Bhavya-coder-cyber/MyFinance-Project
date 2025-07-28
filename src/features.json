@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Well defined Dashboard",
+    "image": "/1.png",
+    "content": "Allows the user to check their investments and balance in real time."
+  },
+  {
+    "title": "Wallet Management",
+    "image": "/2.png",
+    "content": "Allows the user to top up their wallet and withdraw funds from their wallet."
+  },
+  {
+    "title": "Dashboard based on User's Portfolio",
+    "image": "/3.jpg",
+    "content": "A dynamic dashboard that shows your portfolio in a visually appealing way."
+  },
+  {
+    "title": "Real Time Stock Data",
+    "image": "/4.jpg",
+    "content": "Get real time stock data for your portfolio and chart performance over different time periods."
+  },
+  {
+    "title": "Invest in varied assets",
+    "image": "/5.jpg",
+    "content": "Invest in both Indian and U.S. stock market and crypto currency [Coming Soon]."
+  }
+]

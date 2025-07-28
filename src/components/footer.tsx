@@ -152,6 +152,9 @@ export default function Footer() {
 
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center">
+            Investments are subject to market risks. Please invest with proper research and awareness.
+          </span>
+          <span className="text-sm text-gray-500 sm:text-center">
             © 2025{" "}
             <Link
               href="http://www.linkedin.com/in/bhavya-jain-831b51291"

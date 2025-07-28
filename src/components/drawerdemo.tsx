@@ -73,7 +73,7 @@ export function DrawerDemo({
               {" "}
               {method === "Sell"
                 ? `Total Units: ${units}`
-                : "Set how many units to buy."}
+                : `Set how many units to buy. [Max is ${units} at a time]`}
             </DrawerDescription>
           </DrawerHeader>
           <div className="p-4 pb-0">

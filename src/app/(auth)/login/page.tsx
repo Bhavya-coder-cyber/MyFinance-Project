@@ -37,6 +37,7 @@ const SignInPage = () => {
   });
 
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
+    setIsSubmitting(true);
     const result = await signIn("credentials", {
       redirect: false,
       identifier: data.identifier,
@@ -54,6 +55,8 @@ const SignInPage = () => {
     if (result?.url) {
       router.replace("/dashboard");
     }
+
+    setIsSubmitting(false);
   };
   return (
     <div className="grid min-h-svh lg:grid-cols-2">
@@ -100,7 +103,14 @@ const SignInPage = () => {
                 />
                 <div className="flex justify-center">
                   <Button type="submit" variant="default">
-                    Sign In
+                    {isSubmitting ? (
+                      <>
+                        <Loader className="mr-2 h-4 w-4 animate-spin" /> Please
+                        Wait
+                      </>
+                    ) : (
+                      "Sign In"
+                    )}
                   </Button>
                 </div>
               </form>

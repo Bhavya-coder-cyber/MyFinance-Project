@@ -150,7 +150,7 @@ const GetStocks = () => {
                   className={`bg-blue-600 text-white px-10 py-3 rounded-md hover:bg-blue-700 cursor-pointer text-2xl ${
                     loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
-                  units={30}
+                  units={100}
                   onSubmit={handleBuy}
                 />
               </div>

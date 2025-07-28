@@ -12,19 +12,19 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-around p-5 bg-black dark:bg-black">
         <div>
-          <a href='#' className="text-3xl font-bold font-serif italic text-white dark:text-white">
+          <a href='/' className="text-3xl font-bold font-serif italic text-white dark:text-white">
             MyFinance
           </a>
           {
                 session ? (
                     <>
                     <span className="text-md flex justify-between font-lemon text-white dark:text-white">Welcome, {user?.username || user?.email}</span>
-                    <Button className='w-full md:w-auto' onClick={() => signOut()} variant="default">Logout</Button>
+                    <Button className='w-full md:w-auto cursor-pointer' onClick={() => signOut()} variant="default">Logout</Button>
                     </>
                 ) : (
                     <>
-                    <Link href="/sign-in">
-                        <Button className='w-full md:w-auto' variant="default">Login</Button>
+                    <Link href="/login">
+                        <Button className='w-full md:w-auto cursor-pointer' variant="default">Login</Button>
                     </Link>
                     </>
                 )
@@ -38,7 +38,7 @@ const Navbar = () => {
             </Link>
           </p>
           <p className="flex justify-between p-2 rounded-lg font-serif cursor-pointer text-white dark:text-white">
-            <Link href="/dashboard">
+            <Link href="/pumpBalance">
               <Button variant="ghost" className='cursor-pointer text-xl'>Wallet</Button>
             </Link>
           </p>
@@ -48,7 +48,7 @@ const Navbar = () => {
             </Link>
           </p>
           <p className="flex justify-between p-2 rounded-lg font-serif cursor-pointer text-white dark:text-white">
-            <Link href="/profile">
+            <Link href="/getCrypto">
               <Button variant="ghost" className='cursor-pointer text-xl'>Crypto</Button>
             </Link>
           </p>
