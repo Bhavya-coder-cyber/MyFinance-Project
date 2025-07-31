@@ -22,6 +22,8 @@ The app features a clean React UI with components like stock charts, dynamic por
 - Email notifications for user actions (registration, verification).
 - Robust backend with Mongoose and MongoDB.
 - Responsive, accessible, and user-friendly interface.
+- Learn with our AI chat FinGenius AI for any questions related to stock market and finance.
+- Catch on the latest finance news and updates.
 
 ---
 
@@ -61,9 +63,7 @@ The app features a clean React UI with components like stock charts, dynamic por
 ## 🧩 Future Integrations & Roadmap
 
 - **Add Crypto Transactions**: Currently, only stocks can be tracked. Although we search in the stock section also, but crypto transactions should be needed a seperate section and a seperate dashboard.
-- **Learn Section**: A learning section for users to learn about finance and stock market. An agent will be trained to answer questions related to stock market and finance.
-- **Mobile App**: Native iOS/Android app for warranty management on the go.
-- **News Section**: Show news related to stock market is in progress.
+- **Mobile App**: Native iOS/Android app for MyFinance on the go.
 - **Download Portfolio**: Allow users to download their portfolio as a PDF or Excel file.
 
 ---
