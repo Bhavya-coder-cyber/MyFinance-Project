@@ -1,5 +1,5 @@
 "use client";
-import { ChatDemo } from "@/components/chat-demo";
+import ChatDemo from "@/components/chat-demo";
 import { ModeToggle } from "@/components/darkmode";
 import Link from "next/link";
 import { useEffect, useState } from "react";
