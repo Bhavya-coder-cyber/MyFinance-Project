@@ -49,6 +49,8 @@ The app features a clean React UI with components like stock charts, dynamic por
 - **Buy and Sell Units**: Users can buy and sell stock units with real-time price updates and currency conversion.
 - **Portfolio Management**: Users can view their portfolio and manage their stock holdings in a visually appealing way.
 - **Top Up Balance or Withdraw Funds**: Users can top up their balance and withdraw funds from their wallet.
+- **Learn how the market works using FinGenius**: An AI Chatbot which guides through every important and current information related to investment.
+- **News Tab**: Catch the current affairs on stock market and tariffs happening around the world.
 
 ---
 
