@@ -2,14 +2,13 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import Axios, { AxiosError } from "axios";
+import Axios from "axios";
 import toast from "react-hot-toast";
 
 import { Button } from "@/components/ui/button";
 
 const PumpBalance = () => {
   const [balance, setBalance] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
   const { data: session } = useSession();
   const [withdraw, setWithdraw] = useState(0);
 
@@ -23,6 +22,7 @@ const PumpBalance = () => {
     }
   } catch (error) {
     setBalance(0);
+    console.error("Error fetching balance:", error);
   }
 }, []);
 

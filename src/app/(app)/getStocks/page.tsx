@@ -1,12 +1,8 @@
 "use client";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TradingViewWidget from "@/components/page";
 import axios from "axios";
-import { ModeToggle } from "@/components/darkmode";
 import { DrawerDemo } from "@/components/drawerdemo";
-import { usernameValidation } from "@/schemas/signupSchema";
-import Link from "next/link";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 
@@ -35,10 +31,6 @@ const GetStocks = () => {
     currency: "",
     price: "",
   });
-  const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
-  const [maxUnits, setMaxUnits] = useState(0);
-
-  const { data: session } = useSession();
 
   const handleSearch = async () => {
     try {
@@ -66,7 +58,6 @@ const GetStocks = () => {
       );
       
       console.log(matching?.units);
-      setMaxUnits(matching?.units);
     } catch (error) {
       console.error("Error fetching stock data:", error);
     } finally {

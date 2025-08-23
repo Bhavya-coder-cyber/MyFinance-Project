@@ -3,15 +3,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import axios, { AxiosError } from "axios";
-import { ApiResponse } from "@/types/ApiResponse";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,6 +20,7 @@ import { Loader } from "lucide-react";
 import { signInSchema } from "@/schemas/signinSchema";
 import { signIn } from "next-auth/react";
 import { ModeToggle } from "@/components/darkmode";
+import Image from "next/image";
 
 const SignInPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -117,7 +115,7 @@ const SignInPage = () => {
             </Form>
             <div className="text-center mt-4">
               <p>
-                Don't have an account?{" "}
+                Don\'t have an account?{" "}
                 <Link href="/signup" className="text-blue-500 hover:underline">
                   Sign Up
                 </Link>
@@ -127,7 +125,7 @@ const SignInPage = () => {
         </div>
       </div>
       <div className="bg-muted relative hidden lg:block">
-        <img
+        <Image
           src="https://i.pinimg.com/736x/b3/18/fc/b318fc0405251ac04ecc65b8bf77c0f9.jpg"
           alt="Image"
           className="absolute inset-0 h-full w-full object-cover"

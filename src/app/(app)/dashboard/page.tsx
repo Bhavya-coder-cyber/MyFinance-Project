@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import Axios, { AxiosError } from "axios";
+import Axios from "axios";
 import toast from "react-hot-toast";
 
 import { Button } from "@/components/ui/button";
@@ -21,12 +21,10 @@ interface PortfolioItem {
 const Dashboard = () => {
   const [balance, setBalance] = useState(0);
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const { data: session } = useSession();
 
   const fetchPortfolio = useCallback(
     async (refresh: boolean = false) => {
-      setIsLoading(true);
       try {
         const response = await Axios.get<{ success: boolean; portfolios: PortfolioItem[]; message?: string }>("/api/get-portfolio");
         if (response.data.success) {
@@ -37,10 +35,8 @@ const Dashboard = () => {
           setPortfolio([]);
         }
       } catch (error) {
-        const axiosError = error as AxiosError;
         setPortfolio([]);
-      } finally {
-        setIsLoading(false);
+        console.error("Error fetching portfolio:", error);
       }
     },
     []
@@ -56,6 +52,7 @@ const Dashboard = () => {
     }
   } catch (error) {
     setBalance(0);
+    console.error("Error fetching balance:", error);
   }
 }, []);
 
