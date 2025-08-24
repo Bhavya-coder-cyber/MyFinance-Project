@@ -2,10 +2,8 @@
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { verifySchema } from "@/schemas/verifySchema";
@@ -47,7 +45,7 @@ const VerifyAccountPage = () => {
     } catch (error) {
         console.error("Error verifying code:", error);
         const axiosError = error as AxiosError<ApiResponse>;
-        let errorMessage = axiosError.response?.data.message;
+        const errorMessage = axiosError.response?.data.message;
         toast.error("Error verifying code" + errorMessage);
     }
   }

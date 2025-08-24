@@ -3,7 +3,6 @@ import { useState } from "react";
 import TradingViewWidget from "@/components/page";
 import axios from "axios";
 import { DrawerDemo } from "@/components/drawerdemo";
-import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 
 interface StockData {

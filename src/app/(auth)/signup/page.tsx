@@ -12,7 +12,6 @@ import { ApiResponse } from "@/types/ApiResponse";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,7 +22,6 @@ import { Button } from "@/components/ui/button";
 import { Loader } from "lucide-react";
 import { signupSchema } from "@/schemas/signupSchema";
 import { ModeToggle } from "@/components/darkmode";
-import { cn } from "@/lib/utils";
 
 const SignUpPage = () => {
   const [username, setUsername] = useState("");
@@ -56,7 +54,7 @@ const SignUpPage = () => {
           const response = await axios.get(
             `/api/check-username-unique?username=${username}`
           );
-          let message = response.data.message;
+          const message = response.data.message;
           console.log(message);
           setUsernameMessage(message);
           setIsCheckingUsername(false);
@@ -82,7 +80,7 @@ const SignUpPage = () => {
     } catch (error) {
       console.error("Error signing up:", error);
       const axiosError = error as AxiosError<ApiResponse>;
-      let errorMessage = axiosError.response?.data.message;
+      const errorMessage = axiosError.response?.data.message;
       toast.error("Error signing up " + errorMessage);
       setIsSubmitting(false);
     }
