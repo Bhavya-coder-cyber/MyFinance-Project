@@ -10,7 +10,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -138,7 +137,7 @@ export default function Home() {
                   informed decisions about their investments.
                 </p>
                 <p>
-                  Whether you're a seasoned investor or a beginner, MyFinance
+                  Whether you&apos;re a seasoned investor or a beginner, MyFinance
                   has everything you need to succeed in the world of finance.
                 </p>
               </div>

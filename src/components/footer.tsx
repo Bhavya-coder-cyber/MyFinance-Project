@@ -116,9 +116,9 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline hover:text-amber-600">
+                  <Link href="/" className="hover:underline hover:text-amber-600">
                     Discord
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

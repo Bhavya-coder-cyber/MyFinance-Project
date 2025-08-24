@@ -66,7 +66,7 @@ export function PortfolioPieChart({ portfolio }: Props) {
 
   const chartConfig: ChartConfig = {
     visitors: { label: "Units" },
-    ...chartData.reduce((acc, item, index) => {
+    ...chartData.reduce((acc, item) => {
       acc[item.browser] = {
         label: item.browser,
         color: item.fill,

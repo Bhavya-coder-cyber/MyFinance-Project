@@ -12,9 +12,9 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-around p-5 bg-black dark:bg-black">
         <div>
-          <a href='/' className="text-3xl font-bold font-serif italic text-white dark:text-white">
+          <Link href='/' className="text-3xl font-bold font-serif italic text-white dark:text-white">
             MyFinance
-          </a>
+          </Link>
           {
                 session ? (
                     <>
