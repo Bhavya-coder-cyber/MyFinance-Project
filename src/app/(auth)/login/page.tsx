@@ -125,7 +125,7 @@ const SignInPage = () => {
         </div>
       </div>
       <div className="bg-muted relative hidden lg:block">
-        <Image
+        <img
           src="https://i.pinimg.com/736x/b3/18/fc/b318fc0405251ac04ecc65b8bf77c0f9.jpg"
           alt="Image"
           className="absolute inset-0 h-full w-full object-cover"
